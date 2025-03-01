@@ -1,5 +1,5 @@
 import { CORE_CONCEPTS } from "./data.js";
-import { Header } from "./Components/Header.jsx"; // export without default in the component {} ARE MANDATORY
+import { Header } from "./Components/Header/Header.jsx"; // export without default in the component {} ARE MANDATORY
 import CoreConcept from "./Components/CoreConcept.jsx"; // export WITH Default in component {}s SHOULD NOT BE USED
 
 function App() {
