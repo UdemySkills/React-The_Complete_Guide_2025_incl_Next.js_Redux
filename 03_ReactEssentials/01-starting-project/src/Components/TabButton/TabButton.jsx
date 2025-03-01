@@ -1,9 +1,6 @@
 export default function TabButton(props) {
   const children = props.children;
-
-  function handleClick() {
-    console.log("Hello Venky !!!");
-  }
+  const handleClick = props.onSelect;
 
   return (
     <li>
