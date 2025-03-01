@@ -8,12 +8,12 @@ function genRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
-function CoreConcept(props) {
+function CoreConcept({ image, title, description }) {
   return (
     <li>
-      <img src={props.image} alt="..."></img>
-      <h3>{props.title}</h3>
-      <p> {props.description}</p>
+      <img src={image} alt="..."></img>
+      <h3>{title}</h3>
+      <p> {description}</p>
     </li>
   );
 }
