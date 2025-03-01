@@ -4,8 +4,8 @@ import CoreConcept from "./Components/CoreConcept.jsx"; // export WITH Default i
 import TabButton from "./Components/TabButton/TabButton.jsx";
 
 function App() {
-  function handleSelect() {
-    console.log("Hello Venky !!!");
+  function handleSelect(selectedButton) {
+    console.log("Hello Venky !!! " + selectedButton);
   }
 
   return (
@@ -28,10 +28,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={handleSelect}>Component</TabButton>
-            <TabButton onSelect={handleSelect}>JSX</TabButton>
-            <TabButton onSelect={handleSelect}>Props</TabButton>
-            <TabButton onSelect={handleSelect}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("Component")}>
+              Component
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("State")}>State</TabButton>
           </menu>
         </section>
       </main>
