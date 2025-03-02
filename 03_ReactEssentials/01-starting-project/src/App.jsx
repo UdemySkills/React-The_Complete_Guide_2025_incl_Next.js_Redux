@@ -35,19 +35,35 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcept
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcept
+                key={conceptItem.title}
+                {...conceptItem}
+              ></CoreConcept>
+            ))}
+            {/* <CoreConcept
               image={CORE_CONCEPTS[0].image}
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description}
             ></CoreConcept>
             <CoreConcept {...CORE_CONCEPTS[1]}></CoreConcept>
             <CoreConcept {...CORE_CONCEPTS[2]}></CoreConcept>
-            <CoreConcept {...CORE_CONCEPTS[3]}></CoreConcept>
+            <CoreConcept {...CORE_CONCEPTS[3]}></CoreConcept> */}
           </ul>
         </section>
         <section id="examples">
           <h2>Examples</h2>
           <menu>
+            {/* {EXAMPLES.map((buttonItem) => (
+              <TabButton
+                isSelected={selectedTopic === buttonItem.title}
+                onSelect={() => handleSelect(buttonItem.title)}
+              >
+                {buttonItem.title}
+              </TabButton>
+            ))} */}
+            {/* The above line is commented as it will nor work because the source is collection of objects and not an array
+            refer to the data.js file and compare between the EXAMPLES v/s CORE_CONCEPTS Json sections carefully */}
             <TabButton
               isSelected={selectedTopic === "components"}
               onSelect={() => handleSelect("components")}
