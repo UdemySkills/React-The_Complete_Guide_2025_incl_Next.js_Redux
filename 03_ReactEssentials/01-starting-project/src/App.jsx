@@ -1,12 +1,18 @@
+import { useState } from "react";
 import { CORE_CONCEPTS } from "./data.js";
 import { Header } from "./Components/Header/Header.jsx"; // export without default in the component {} ARE MANDATORY
 import CoreConcept from "./Components/CoreConcept.jsx"; // export WITH Default in component {}s SHOULD NOT BE USED
 import TabButton from "./Components/TabButton/TabButton.jsx";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
+
   function handleSelect(selectedButton) {
-    console.log("Hello Venky !!! " + selectedButton);
+    setSelectedTopic(selectedButton);
+    console.log("Hello Venky !!! " + selectedTopic);
   }
+
+  console.log("AppComponent executed");
 
   return (
     <div>
@@ -35,6 +41,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("State")}>State</TabButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>
