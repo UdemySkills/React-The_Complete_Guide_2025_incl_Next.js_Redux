@@ -3,13 +3,13 @@ import { CORE_CONCEPTS } from "./data.js";
 import { Header } from "./Components/Header/Header.jsx"; // export without default in the component {} ARE MANDATORY
 import CoreConcept from "./Components/CoreConcept.jsx"; // export WITH Default in component {}s SHOULD NOT BE USED
 import TabButton from "./Components/TabButton/TabButton.jsx";
+import { EXAMPLES } from "./data.js";
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
+  const [selectedTopic, setSelectedTopic] = useState("components");
 
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
-    console.log("Hello Venky !!! " + selectedTopic);
   }
 
   console.log("AppComponent executed");
@@ -34,14 +34,20 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect("Component")}>
+            <TabButton onSelect={() => handleSelect("components")}>
               Component
             </TabButton>
-            <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect("State")}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
