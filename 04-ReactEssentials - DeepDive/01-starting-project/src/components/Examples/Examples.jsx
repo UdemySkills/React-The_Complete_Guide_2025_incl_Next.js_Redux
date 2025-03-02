@@ -30,7 +30,8 @@ export default function Examples() {
   return (
     <Section title="Examples" id="examples">
       <Tabs
-        ButtonsContainer="menu" //React knows that you are using built in element if passed as a string "" to use custom component it shuold be between {}
+        //ButtonsContainer="menu" //React knows that you are using built in element if passed as a string "" to use custom component it shuold be between {}
+        //ButtonsContainer="menu" is commented as we are using the default type in the tabs component, this can still be assigned any type / value if we need like menu/div/ul and so on.
         buttons={
           <>
             <TabButton
