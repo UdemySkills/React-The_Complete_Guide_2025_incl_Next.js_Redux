@@ -27,7 +27,7 @@ export default function Examples() {
   }
 
   return (
-    <Section id="examples" title="Examples">
+    <Section title="Examples">
       <menu>
         <TabButton
           isSelected={selectedTopic === "components"}
