@@ -7,16 +7,16 @@ export default function Player({ name, symbol }) {
     setIsEditing(!isEditing);
   }
 
+  let playerName = <span className="player-name">{name}</span>;
+  if (isEditing) {
+    playerName = <input type="text"></input>;
+  }
+
   return (
     <>
       <li>
         <span className="=Player">
-          {isEditing ? (
-            <input type="text"></input>
-          ) : (
-            <span className="player-name">{name}</span>
-          )}
-
+          {playerName}
           <span className="player-symbol">{symbol}</span>
         </span>
         <button onClick={handleEditClick}>{isEditing ? "Save" : "Edit"}</button>
