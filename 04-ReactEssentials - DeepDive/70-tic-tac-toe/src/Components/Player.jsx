@@ -1,11 +1,18 @@
 import { useState } from "react";
 
-export default function Player({ initialName, symbol, isActive }) {
+export default function Player({
+  initialName,
+  symbol,
+  isActive,
+  onChangeName,
+}) {
   const [isEditing, setIsEditing] = useState(false);
   const [playerName, setPlayerName] = useState(initialName);
   function handleEditClick() {
     setIsEditing((editing) => !editing); //Using the set state to toggle this way 'Arrow Function' will make the cahnge instant.
+    onChangeName(symbol, playerName);
     if (isEditing) {
+      onchange(symbol, playerName);
     }
   }
 
