@@ -4,6 +4,7 @@ import GameBoard from "./Components/GameBoard";
 import { React, useState } from "react";
 import Log from "./Components/Log.jsx";
 import { WINNING_COMBINATIONS } from "./assets/winning-combinations.js";
+import GameOver from "./Components/GameOver.jsx";
 
 const initialGameBoard = [
   [null, null, null],
@@ -53,6 +54,8 @@ function App() {
     }
   }
 
+  const hasDraw = gameTurns.length === 9 && !winner;
+
   function handleSelectSquare(rowIndex, colIndex) {
     // setActivePlayer((curActivePlayer) => (curActivePlayer === "X" ? "O" : "X"));
     setGameTurns((prevTurns) => {
@@ -81,7 +84,7 @@ function App() {
             isActive={activePlayer === "O"}
           ></Player>
         </ol>
-        {winner && <p> You Won, {winner} !!!</p>}
+        {(winner || hasDraw) && <GameOver winner={winner}></GameOver>}
         <GameBoard
           onSelectSquare={handleSelectSquare}
           board={gameBoard}
