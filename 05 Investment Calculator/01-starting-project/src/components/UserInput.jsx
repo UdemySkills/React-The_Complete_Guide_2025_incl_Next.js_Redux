@@ -36,7 +36,7 @@ export default function UserInput({ onChange, userInput }) {
           ></input>
         </p>
         <p>
-          <label>Annual Investment</label>
+          <label>Duration</label>
           <input
             type="number"
             required

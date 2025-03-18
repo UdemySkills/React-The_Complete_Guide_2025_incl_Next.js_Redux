@@ -11,6 +11,8 @@ function App() {
     duration: 10,
   });
 
+  const inputIsValid = userInput.duration >= 1;
+
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
       return { ...prevUserInput, [inputIdentifier]: +newValue }; //simply adding the + symbol here is taking care of converting the the input value to number type
@@ -21,7 +23,11 @@ function App() {
     <>
       <Header></Header>
       <UserInput onChange={handleChange} userInput={userInput}></UserInput>
-      <Results input={userInput}></Results>
+      {inputIsValid ? (
+        <Results input={userInput}></Results>
+      ) : (
+        <p className="center">Error occoured, please enter valid number.</p>
+      )}
     </>
   );
 }
