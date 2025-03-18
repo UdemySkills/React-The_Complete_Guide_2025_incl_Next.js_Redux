@@ -13,7 +13,7 @@ function App() {
 
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
-      return { ...prevUserInput, [inputIdentifier]: newValue };
+      return { ...prevUserInput, [inputIdentifier]: +newValue }; //simply adding the + symbol here is taking care of converting the the input value to number type
     });
   }
 
