@@ -7,6 +7,14 @@ export default function Header() {
       <img src={logo} alt="A canvas" />
       <h1>ReactArt</h1>
       <p>A community of artists and art-lovers.</p>
+      <span
+        style={{
+          color: "red",
+          textAlign: "center",
+        }}
+      >
+        This is the inline Style
+      </span>
     </header>
   );
 }
