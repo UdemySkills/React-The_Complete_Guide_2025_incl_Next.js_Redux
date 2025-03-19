@@ -27,10 +27,10 @@ export default function AuthInputs() {
           <label>Email</label>
           <input
             type="email"
-            style={{
-              backgroundColor: emailNotValid ? "#fed2d2" : "#d1d5db",
-            }}
-            //className={emailNotValid ? 'invalid' : undefined} //commented to implement the conditional inline styles
+            // style={{
+            //   backgroundColor: emailNotValid ? "#fed2d2" : "#d1d5db",
+            // }}
+            className={emailNotValid ? "invalid" : undefined} //User ternary operator instead of truthy (className={emailNotValid && "invalid") check as it would throw warnings.
             onChange={(event) => handleInputChange("email", event.target.value)}
           />
         </p>
