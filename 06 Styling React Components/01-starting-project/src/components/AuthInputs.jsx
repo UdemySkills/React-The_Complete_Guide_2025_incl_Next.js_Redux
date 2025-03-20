@@ -15,16 +15,16 @@ const Label = styled.label`
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: ${(props) => (props.invalid ? "#f87171" : "#6b7280")};
+  color: ${(props) => (props.$invalid ? "#f87171" : "#6b7280")};
 `;
 
 const Input = styled.input`
   width: 100%;
   padding: 0.75rem 1rem;
   line-height: 1.5;
-  background-color: ${(props) => (props.invalid ? " #fed2d2" : "#d1d5db")};
-  border-color: ${(props) => (props.invalid ? "#f73f3f" : "rgb(41, 41, 41)")};
-  color: ${(props) => (props.invalid ? "#f73f3f" : " #374151")};
+  background-color: ${(props) => (props.$invalid ? " #fed2d2" : "#d1d5db")};
+  border-color: ${(props) => (props.$invalid ? "#f73f3f" : "rgb(41, 41, 41)")};
+  color: ${(props) => (props.$invalid ? "#f73f3f" : " #374151")};
   border: 1px solid transperant;
   border-radius: 0.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -54,18 +54,18 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <ControlContainer>
         <p>
-          <Label invalid={emailNotValid}>Email</Label>
+          <Label $invalid={emailNotValid}>Email</Label>
           <Input
             type="email"
-            invalid={emailNotValid}
+            $invalid={emailNotValid}
             onChange={(event) => handleInputChange("email", event.target.value)}
           />
         </p>
         <p>
-          <Label invalid={passwordNotValid}>Password</Label>
+          <Label $invalid={passwordNotValid}>Password</Label>
           <Input
             type="password"
-            invalid={passwordNotValid}
+            $invalid={passwordNotValid}
             onChange={(event) =>
               handleInputChange("password", event.target.value)
             }
